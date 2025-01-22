@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'bases';
+  public title: string = 'Wenas Mundo';
+  public counter: number = 10;
+
+  addCounter(x:number):void {
+    this.counter+=x;
+  }
+
+  resetCounter():void{
+    this.counter=10;
+  }
+
 }

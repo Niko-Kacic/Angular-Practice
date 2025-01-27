@@ -15,14 +15,20 @@ export class HeroComponent {
   }
 
   getHeroDescription():string{
-    return `${this.name} - ${this.age}`
+    return `${this.name} - ${this.age}`;
   }
 
   changeHero():void {
-    this.name = 'MoonKnight'
+    this.name = 'MoonKnight';
   }
 
   changeAge():void {
-    this.age = 33
+    this.age = 33;
+  }
+
+  resetForm():void{
+    this.name = 'ironman';
+    this.age = 35;
+
   }
 }

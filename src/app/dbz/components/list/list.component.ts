@@ -8,7 +8,7 @@ import { Character } from '../../interfaces/character.interface';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-  @Input()
+  @Input('customProperty')
   public characterList: Character[] = [
     {
       name: 'Trunks',

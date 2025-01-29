@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
+import { DbzService } from '../../services/dbz.service';
 
 @Component({
   selector: 'app-dbz-list',
@@ -8,9 +9,10 @@ import { Character } from '../../interfaces/character.interface';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
+  constructor(public dbzService:DbzService){}
 
   @Output()
-  public deletedIndex : EventEmitter<number> = new EventEmitter();
+  public onDelete : EventEmitter<string> = new EventEmitter();
 
   @Input('customProperty')
   public characterList: Character[] = [
@@ -20,11 +22,10 @@ export class ListComponent {
     },
   ]
 
-  onDeleteCharacter(index:number):void{
-    this.deletedIndex.emit(index);
-    console.log(index)
-
+  onDeleteCharacter(id?:string){
+    if(!id) return;
+    console.log(id)
+    this.onDelete.emit(id);
   }
 }
-
 

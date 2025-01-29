@@ -3,11 +3,11 @@
 
 <div class="row">
   <div class="col">
-    <app-dbz-list [customProperty]="characters"  (deletedIndex)="deletedIndex($event)"></app-dbz-list>
+    <app-dbz-list [customProperty]="dbzService.characters"  (onDelete)="dbzService.deletedById($event)"></app-dbz-list>
   </div>
 
   <div class="col">
-    <app-dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></app-dbz-add-character>
+    <app-dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)" ></app-dbz-add-character>
   </div>
 
 </div>
